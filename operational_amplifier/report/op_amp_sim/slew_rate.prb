@@ -1,0 +1,97 @@
+[MEASUREMENTS]
+TR 0 SlewRate_Rise_M(V(v_out))
+[DISPLAYS]
+BEGIN DISPLAY LAST SESSION
+ANALYSIS TRANSIENT_ANALYSIS
+SYMBOL ALWAYS
+TRACECOLORSCHEME NORMAL
+BEGIN ANAPLOT 1
+ACTIVE
+XBASE
+BEGIN XAXIS
+XAXISUSERNAME 0 (null)
+TEXT Time
+RANGEFLAG AUTO
+TYPE LINEAR
+UNIT s
+BEGIN GRIDS
+AUTOMATIC
+MAJORNUMBERS
+MAJORSTYLE LINES
+MAJORPATTERN SOLID
+MINORSTYLE LINES
+MINORPATTERN DOT
+END GRIDS
+END XAXIS
+BEGIN YAXIS 1
+YAXISSIDE LEFT
+ACTIVE
+RANGEFLAG AUTO
+TYPE LINEAR
+UNIT V
+BEGIN GRIDS
+AUTOMATIC
+MAJORNUMBERS
+MAJORSTYLE LINES
+MAJORPATTERN SOLID
+MINORSTYLE LINES
+MINORPATTERN DOT
+END GRIDS
+BEGIN TRACE V(pulse:+)
+MARKERID 17
+TRACEADDEXT
+END TRACE V(pulse:+)
+BEGIN TRACE V(v_out)
+MARKERID 18
+TRACEADDEXT
+END TRACE V(v_out)
+END YAXIS 1
+END ANAPLOT 1
+BEGIN MEASUREMENTS
+SIZE 87
+MEASNAMECOLWIDTH 210
+BEGIN MEASUREMENT 1
+NAME SlewRate_Rise_M(V(v_out))
+EVALUATE 1
+END MEASUREMENT 1
+END MEASUREMENTS
+END DISPLAY LAST SESSION
+
+SlewRate_Rise_M(1)=(y4-y3)/(x4-x3)
+*#Desc#* Find the first and final Y values of the trace.  Then find the
+*#Desc#* difference between the X values of the points where the trace
+*#Desc#* first crosses 10% then 90% of the range between its starting and
+*#Desc#* final values with a positive slope.
+*#Desc#* (i.e. Find the slew rate of a positive going step response curve.)
+*
+*#Arg1#* Name of trace to search
+*
+* Usage:
+*	SlewRate_Rise(<trace name>)
+*
+   {
+      1|Search forward x value (0%) !1
+	Search forward x value (100%) !2
+	Search forward /Begin/ level (y1+0.1*(y2-y1),p) !3
+	Search forward level (y1+0.9*(y2-y1),p) !4;
+   }
+
+[GOAL FUNCTIONS]
+SlewRate_Rise_M(1)=(y4-y3)/(x4-x3)
+*#Desc#* Find the first and final Y values of the trace.  Then find the
+*#Desc#* difference between the X values of the points where the trace
+*#Desc#* first crosses 10% then 90% of the range between its starting and
+*#Desc#* final values with a positive slope.
+*#Desc#* (i.e. Find the slew rate of a positive going step response curve.)
+*
+*#Arg1#* Name of trace to search
+*
+* Usage:
+*	SlewRate_Rise_M(<trace name>)
+*
+   {
+      1|Search forward x value (0%) !1
+	Search forward x value (100%) !2
+	Search forward /Begin/ level (y1+0.1*(y2-y1),p) !3
+	Search forward level (y1+0.9*(y2-y1),p) !4;
+   }

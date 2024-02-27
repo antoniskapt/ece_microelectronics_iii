@@ -1,0 +1,648 @@
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "trans.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../op_amp-pspicefiles/op_amp.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 200u  0 1n 
+.TEMP -20 0 20 27 40 60 80 100
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source OP_AMP
+M_M1         N00274 V_INV N00328 N00328 pfet   
++ W=70u         
+M_M2         N00294 V_ID N00328 N00328 pfet   
++ W=70u         
+M_M3         N00274 N00274 VSS VSS nfet   
++ W=30u         
+M_M4         N00294 N00274 VSS VSS nfet   
++ W=30u         
+M_M5         N00328 N00449 VDD VDD pfet   
++ W=30u         
+M_M6         V_OUT N00294 VSS VSS nfet   
++ W=20u         
+C_CC         N003900 V_OUT  0.477p  TC=0,0 
+M_M7         V_OUT N00449 VDD VDD pfet   
++ W=40u         
+M_M8         N00449 N00449 VDD VDD pfet   
++ W=6u         
+I_Iref         N00449 0 DC 20u  
+C_CL         0 V_OUT  2.17e-12  TC=0,0 
+R_RZ         N003900 N00294  500k TC=0,0 
+R_Rf         V_INV V_OUT  470k TC=0,0 
+V_uid         M_UN0001 0 DC 0Vdc AC 100m 
+V_VSS         0 VSS 1.851Vdc
+V_pulse         M_UN0002 0  
++PULSE -1 1 0 1f 1f 5u 10u
+V_VDD         VDD 0 1.851Vdc
+V_u_sin         V_ID 0  
++SIN 0 100m 10k 0 0 0
+R_R1         V_INV 0  100 TC=0,0 
+
+**** RESUMING trans.cir ****
+.END
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               pfet            nfet            
+               PMOS            NMOS            
+       LEVEL    3               3            
+         TPG   -1                            
+           L    1.000000E-06    1.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+          LD   22.000000E-09  164.700000E-09 
+         VTO    -.9056           .786        
+          KP   29.352000E-06   96.379000E-06 
+       GAMMA     .4863           .5863       
+         PHI     .6              .6          
+      LAMBDA    0               0            
+         RSH  104.7            85.45         
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .85             .8          
+        PBSW     .85             .8          
+          CJ  484.470000E-06  385.410000E-06 
+        CJSW  164.570000E-12  139.400000E-12 
+          MJ     .5027          1.1854       
+        MJSW     .217168         .125195     
+        CGSO   53.752000E-12  402.410000E-12 
+        CGDO   53.752000E-12  402.410000E-12 
+        CGBO  336.500000E-12  361.440000E-12 
+        NSUB   18.900000E+15   16.160000E+15 
+         NFS    3.460000E+12    5.000000E+12 
+         TOX   21.200000E-09   21.200000E-09 
+          XJ  200.000000E-09  200.000000E-09 
+          UO  180.2           591.7          
+       UCRIT   10.000000E+03   10.000000E+03 
+        VMAX  373.200000E+03  208.200000E+03 
+       DELTA    1.52             .6967       
+       THETA     .1248           .08122      
+         ETA     .1641           .07066      
+       KAPPA    9.694            .1396       
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  -20.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet           nfet      
+
+        VTO       -9.946E-01      8.696E-01  
+        PHI        7.037E-01      7.037E-01  
+         PB        9.145E-01      8.723E-01  
+     IS(JS)        1.939E-18      1.939E-18  
+         KP        3.789E-05      1.244E-04  
+         UO        2.326E+02      7.639E+02  
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =  -20.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    1.8510  (  VSS)   -1.8510  ( V_ID)    0.0000  (V_INV) 91.15E-06      
+
+(V_OUT)     .4285  (N00274)   -1.0372 (N00294)   -1.0368 (N00328)     .9415     
+
+(N00449)     .5686 (N003900)   -1.0368                   (M_UN0001)    0.0000   
+
+(M_UN0002)   -1.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_uid        0.000E+00
+    V_VSS       -2.446E-04
+    V_pulse      0.000E+00
+    V_VDD       -2.655E-04
+    V_u_sin      0.000E+00
+
+    TOTAL POWER DISSIPATION   9.44E-04  WATTS
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet           nfet      
+
+        VTO       -9.575E-01      8.347E-01  
+        PHI        6.600E-01      6.600E-01  
+         PB        8.875E-01      8.420E-01  
+     IS(JS)        1.048E-16      1.048E-16  
+         KP        3.381E-05      1.110E-04  
+         UO        2.076E+02      6.816E+02  
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    1.8510  (  VSS)   -1.8510  ( V_ID)    0.0000  (V_INV) 99.15E-06      
+
+(V_OUT)     .4661  (N00274)   -1.0550 (N00294)   -1.0546 (N00328)     .9214     
+
+(N00449)     .5744 (N003900)   -1.0546                   (M_UN0001)    0.0000   
+
+(M_UN0002)   -1.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_uid        0.000E+00
+    V_VSS       -2.423E-04
+    V_pulse      0.000E+00
+    V_VDD       -2.633E-04
+    V_u_sin      0.000E+00
+
+    TOTAL POWER DISSIPATION   9.36E-04  WATTS
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet           nfet      
+
+        VTO       -9.192E-01      7.988E-01  
+        PHI        6.157E-01      6.157E-01  
+         PB        8.598E-01      8.110E-01  
+     IS(JS)        3.319E-15      3.319E-15  
+         KP        3.041E-05      9.985E-05  
+         UO        1.867E+02      6.130E+02  
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    1.8510  (  VSS)   -1.8510  ( V_ID)    0.0000  (V_INV) 107.0E-06      
+
+(V_OUT)     .5031  (N00274)   -1.0736 (N00294)   -1.0732 (N00328)     .9003     
+
+(N00449)     .5814 (N003900)   -1.0732                   (M_UN0001)    0.0000   
+
+(M_UN0002)   -1.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_uid        0.000E+00
+    V_VSS       -2.405E-04
+    V_pulse      0.000E+00
+    V_VDD       -2.616E-04
+    V_u_sin      0.000E+00
+
+    TOTAL POWER DISSIPATION   9.30E-04  WATTS
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet           nfet      
+
+        VTO       -9.056E-01      7.860E-01  
+        PHI        6.000E-01      6.000E-01  
+         PB        8.500E-01      8.000E-01  
+     IS(JS)        1.000E-14      1.000E-14  
+         KP        2.935E-05      9.638E-05  
+         UO        1.802E+02      5.917E+02  
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    1.8510  (  VSS)   -1.8510  ( V_ID)    0.0000  (V_INV) 109.7E-06      
+
+(V_OUT)     .5159  (N00274)   -1.0802 (N00294)   -1.0798 (N00328)     .8927     
+
+(N00449)     .5840 (N003900)   -1.0798                   (M_UN0001)    0.0000   
+
+(M_UN0002)   -1.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_uid        0.000E+00
+    V_VSS       -2.400E-04
+    V_pulse      0.000E+00
+    V_VDD       -2.611E-04
+    V_u_sin      0.000E+00
+
+    TOTAL POWER DISSIPATION   9.28E-04  WATTS
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   40.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet           nfet      
+
+        VTO       -8.799E-01      7.619E-01  
+        PHI        5.707E-01      5.707E-01  
+         PB        8.316E-01      7.794E-01  
+     IS(JS)        6.824E-14      6.824E-14  
+         KP        2.754E-05      9.044E-05  
+         UO        1.691E+02      5.552E+02  
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   40.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    1.8510  (  VSS)   -1.8510  ( V_ID)    0.0000  (V_INV) 114.8E-06      
+
+(V_OUT)     .5395  (N00274)   -1.0929 (N00294)   -1.0925 (N00328)     .8783     
+
+(N00449)     .5893 (N003900)   -1.0925                   (M_UN0001)    0.0000   
+
+(M_UN0002)   -1.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_uid        0.000E+00
+    V_VSS       -2.391E-04
+    V_pulse      0.000E+00
+    V_VDD       -2.602E-04
+    V_u_sin      0.000E+00
+
+    TOTAL POWER DISSIPATION   9.24E-04  WATTS
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   60.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet           nfet      
+
+        VTO       -8.394E-01      7.240E-01  
+        PHI        5.252E-01      5.252E-01  
+         PB        8.027E-01      7.472E-01  
+     IS(JS)        9.843E-13      9.843E-13  
+         KP        2.510E-05      8.242E-05  
+         UO        1.541E+02      5.060E+02  
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   60.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    1.8510  (  VSS)   -1.8510  ( V_ID)    0.0000  (V_INV) 122.4E-06      
+
+(V_OUT)     .5752  (N00274)   -1.1131 (N00294)   -1.1126 (N00328)     .8552     
+
+(N00449)     .5983 (N003900)   -1.1126                   (M_UN0001)    0.0000   
+
+(M_UN0002)   -1.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_uid        0.000E+00
+    V_VSS       -2.379E-04
+    V_pulse      0.000E+00
+    V_VDD       -2.591E-04
+    V_u_sin      0.000E+00
+
+    TOTAL POWER DISSIPATION   9.20E-04  WATTS
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   80.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet           nfet      
+
+        VTO       -7.976E-01      6.848E-01  
+        PHI        4.792E-01      4.792E-01  
+         PB        7.733E-01      7.145E-01  
+     IS(JS)        1.057E-11      1.057E-11  
+         KP        2.300E-05      7.552E-05  
+         UO        1.412E+02      4.636E+02  
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   80.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    1.8510  (  VSS)   -1.8510  ( V_ID)    0.0000  (V_INV) 130.2E-06      
+
+(V_OUT)     .6119  (N00274)   -1.1346 (N00294)   -1.1339 (N00328)     .8311     
+
+(N00449)     .6082 (N003900)   -1.1339                   (M_UN0001)    0.0000   
+
+(M_UN0002)   -1.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_uid        0.000E+00
+    V_VSS       -2.369E-04
+    V_pulse      0.000E+00
+    V_VDD       -2.582E-04
+    V_u_sin      0.000E+00
+
+    TOTAL POWER DISSIPATION   9.16E-04  WATTS
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                    pfet           nfet      
+
+        VTO       -7.546E-01      6.444E-01  
+        PHI        4.326E-01      4.326E-01  
+         PB        7.434E-01      6.813E-01  
+     IS(JS)        8.866E-11      8.866E-11  
+         KP        2.117E-05      6.953E-05  
+         UO        1.300E+02      4.269E+02  
+
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    1.8510  (  VSS)   -1.8510  ( V_ID)    0.0000  (V_INV) 139.1E-06      
+
+(V_OUT)     .6539  (N00274)   -1.1580 (N00294)   -1.1572 (N00328)     .8059     
+
+(N00449)     .6191 (N003900)   -1.1572                   (M_UN0001)    0.0000   
+
+(M_UN0002)   -1.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_uid        0.000E+00
+    V_VSS       -2.359E-04
+    V_pulse      0.000E+00
+    V_VDD       -2.572E-04
+    V_u_sin      0.000E+00
+
+    TOTAL POWER DISSIPATION   9.13E-04  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 01/13/24 19:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-trans"  [ C:\Users\anton\Desktop\op_amp\op_amp-pspicefiles\schematic1\trans.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =      153.38
+  Total job time (using Solver 1)   =       71.89
+

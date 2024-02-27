@@ -1,0 +1,8 @@
+\section{Χαρακτηριστικά των transistor}
+	Οι τιμές των παραμέτρων προσδιορίσθηκαν μέσω των μοντέλων PSpice των transistor της εκφώνησης, παραρτήματα \ref{appendix:pspice_models_pmos} και \ref{appendix:pspice_models_nmos}. Στα μοντέλα έχει προστεθεί και η παράμετρος \texttt{L=1u} η οποία αντιστοιχεί στο μήκος του διαύλου.\par
+
+	\subsection{pMOS}
+	Τα MOSFET διαύλου p έχουν τάση κατωφλίου $V_{T0,p}=-0.9056\unit{\volt}$. Η παράμετρος διαγωγιμότητάς \textsl{(process transconductance parameter)} τους είναι $k_p^\prime=\mu_p\cdot C_{ox,p}=2.9352\cdot 10^{-5}\unit{\ampere\per{\volt^2}}$, όπου $C_{ox,p}$ είναι η χωρητικότητα του στρώματος οξειδίου \textsl{(oxide capacitance)} και $\mu_p=180.2\unit{{\centi\meter}^2\per{\volt\sec}}$ η κινητικότητα των οπών στον δίαυλο.\cite{sedra} Το πάχος του στρώματος του οξειδίου είναι $t_{ox,p}=21.2\unit{\nano\meter}$. Από τα παραπάνω εύκολα προκύπτει πως η χωρητικότητα του στρώματος οξειδίου είναι $C_{ox,p}=\sfrac{k_p^\prime}{\mu_p}=134.642\unit{\micro\farad\per{\centi\meter}^2}$.
+
+\subsection{nMOS}
+	Τα MOSFET διαύλου n έχουν τάση κατωφλίου $V_{T0,n}=0.7860\unit{\volt}$. Το process transconductance parameter τους δίδεται $k_n^\prime=\mu_n\cdot C_{ox,n}=9.6379\cdot 10^{-5}\unit{\ampere\per{\volt^2}}$, όπου $C_{ox,n}$ είναι η χωρητικότητα του στρώματος οξειδίου \textsl{(oxide capacitance)} και $\mu_n=591.7\unit{{\centi\meter}^2\per{\volt\sec}}$ η κινητικότητα των ηλεκτρονίων στον δίαυλο.\cite{sedra} Το πάχος του στρώματος του οξειδίου είναι $t_{ox,n}=21.2\unit{\nano\meter}$. Από τα παραπάνω εύκολα προκύπτει πως η χωρητικότητα του στρώματος οξειδίου είναι $C_{ox,p}=\sfrac{k_p^\prime}{\mu_p}=0.162\:885\unit{\micro\farad\per{\centi\meter}^2}$.

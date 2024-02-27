@@ -1,0 +1,109 @@
+\section{Εκτίμηση aspect ratio $\displaystyle{S=\sfrac{W}{L}}$ των transistor}
+\subsection{Θεωρητική ανάλυση}
+Η χωρητικότητα Miller, $C_C$, στο κύκλωμα \ref{circ:op_amp_schematic} εξασφαλίζει πως η συχνότητα $\omega_{p_1}$ του πόλου $p_1$ της συνάρτησης μεταφοράς του ενισχυτή μετατοπίζεται σε συχνότητες κοντά στο μηδέν και η συχνότητα $\omega_{p_2}$ του πόλου $p_2$ μετατοπίζεται σε υψηλότερες συχνότητες. Έστω, $p_1\to 0$ και $\omega_Z=10\cdot \mathrm{GB}$, τότε, εάν το περιθώριο φάσης είναι $60^\circ$, θα έχουμε
+
+\begin{align*}
+	 & \phi_M=180^\circ-\arctan{\(\frac{\mathrm{GB}}{\omega_{p_1}}\)}-\arctan{\(\frac{\mathrm{GB}}{\omega_{p_2}}\)}-\arctan{\(\frac{\mathrm{GB}}{\omega_{Z}}\)}\Rightarrow \\
+	 & 60^\circ=180^\circ-90^\circ-\arctan{\(\frac{\mathrm{GB}}{\omega_{p_2}}\)}-\arctan{\(0.1\)}\Rightarrow                                                               \\
+	 & \omega_{p_2}=2.215\cdot\mathrm{GB}.
+\end{align*}
+Από τη συνθήκη $\omega_Z=10\cdot \mathrm{GB}$ προκύπτει
+\begin{equation*}
+	\omega_Z=\frac{g_{m6}}{C_C}\Rightarrow 10\cdot \mathrm{GB}=\frac{g_{m6}}{C_C}\Rightarrow 10\cdot\frac{g_{m1}}{C_C}=\frac{g_{m6}}{C_C}
+\end{equation*}
+δηλαδή
+\begin{equation}
+	g_{m6}=10\cdot g_{m1}.
+\end{equation}
+
+Από το περιθώριο φάσης προέκυψε $\omega_{p_2}>2.215\cdot\mathrm{GB}$. Επομένως, είναι
+\begin{align*}
+	 & \omega_{p_2}>2.215\cdot\mathrm{GB}\Rightarrow\frac{g_{m6}}{C_L}>2.215\cdot\mathrm{GB}\Rightarrow \\
+	 & 10\frac{g_{m1}}{C_L}>2.215\cdot\frac{g_{m1}}{C_C}
+\end{align*}
+ή
+\begin{equation}
+	C_C>0.222\cdot C_L
+\end{equation}
+
+Από το slew rate μπορεί να εκτιμηθεί το ρεύμα $I_{D5}$ ως εξής
+\begin{equation}
+	\mathrm{SR}=\frac{I_{D5}}{C_C}\Rightarrow I_{D5}=\mathrm{SR}\cdot C_C
+\end{equation}
+Θεωρώντας πως $I_{D5}=2\cdot I_{D1}=2\cdot{I_{D3}}$ και πως τα M1---M2 και M3---M4 είναι πανομοιότυπα, έχουμε
+\begin{align}
+	S_3=\frac{I_{D5}}{k_n^\prime\cdot\(\min{\(v_{\mathrm{in}}\)}-V_{SS}+|V_{T0,1p}|-V_{T0,3n}\)^2}
+\end{align}
+Θα είναι $S_3=S_4$ και εφόσον όλα τα transistor έχουν μήκος διαύλου $L=1\unit{\micro\meter}$, θα έχουν πλάτος διαύλου $W_3=W_4=S_3\unit{\micro\meter}$.
+
+Έπειτα, εξετάζεται εάν η συχνότητα του πόλου $p_3$ είναι μεγαλύτερη από $10\cdot \mathrm{GB}$. Είναι
+\begin{equation*}
+	\omega_{p_3}=\frac{g_{m_3}}{2C_{gs3}}=\frac{\sqrt{2\cdot k_n^\prime\cdot S_3\cdot I_{D3}}}{0.667\cdot W_3\cdot L_3\cdot C_{ox,n}}
+\end{equation*}
+ή
+\begin{equation}
+	\omega_{p_3}=\frac{\sqrt{k_n^\prime\cdot S_3\cdot I_{D5}}}{0.667\cdot S_3\cdot L_3^2\cdot C_{ox,n}}
+\end{equation}
+
+Η διαγωγιμότητα των transistor M1 και M2 υπολογίζεται μέσω του gain-bandwidth product. Είναι $g_{m1}=g_{m2}=\mathrm{GB}\cdot C_C$. Το aspect ratio τους είναι
+\begin{equation}
+	S_1=S_2=\frac{g_{m1}^2}{k_p^\prime\cdot I_{D5}}.
+\end{equation}
+
+Εν συνεχεία υπολογίζεται το $S_5$.
+\begin{equation}
+	S_5=\frac{2\cdot I_{D5}}{k_p^\prime\cdot V_{DS5,\mathrm{sat}}^2},
+\end{equation}
+όπου
+\begin{equation}
+	V_{DS5,\mathrm{sat}}=\max\(v_{\mathrm{in}}\)-V_{DD}+\sqrt{\frac{I_{D5}}{\beta_1}}+|V_{T0,p}|
+\end{equation}
+και
+\begin{equation}
+	\beta_1=k_p^\prime\cdot S_1.
+\end{equation}
+
+Για το transistor M6 έχουμε
+\begin{equation}
+	S_6=S_4\cdot\frac{g_{m6}}{g_{m4}},
+\end{equation}
+όπου
+\begin{equation}
+	g_{m4}=\sqrt{2\cdot k_n^\prime\cdot S_4\cdot I_{D4}}.
+\end{equation}
+
+Τέλος, το $S7$ μπορεί να υπολογιστεί είτε μέσω της σχέσης \eqref{eq:S7a} είτε μέσω της \eqref{eq:S7b}. Εδώ επιλέγεται η σχέση \eqref{eq:S7a} η οποία, σε θεωρητικό επίπεδο, εξασφαλίζει την απουσία συστηματικού dc offset.\cite{sedra}
+\begin{equation}
+	\label{eq:S7a}
+	S_7=2\frac{S_6\cdot S_5}{S_4}.
+\end{equation}
+Εναλλακτικά,
+\begin{equation}
+	\label{eq:S7b}
+	S_7=S_5\frac{I_{D7}}{I_{D5}},
+\end{equation}
+όπου
+\begin{equation}
+	I_{D6}=I_{D7}=\frac{g_{m6}^2}{2\cdot k_n^\prime\cdot S_6}.
+\end{equation}
+
+\subsection{Αποτελέσματα εκτίμησης}
+Όλα τα παραπάνω εφαρμόζονται στο matlab script \texttt{op\_amp\_S.m}. Τα αποτελέσματα δίδονται στον πίνακα \ref{table:estimate}.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Aspect ratios}}                        \\\hline
+			$S_1 = 1.816719$             & $S_5 = 3.024399$                     \\\hline
+			$S_2 = 1.816719$             & $S_6 = 37.567524$                    \\\hline
+			$S_3 = 25.508331$            & $S_7 = 8.908399$                     \\\hline
+			$S_4 = 25.508331$            & $S_8 = 3.024399$                     \\\hline\hline
+			\textbf{Χωρητικότητα Miller} & $C_C=0.4774\unit{\pico\farad}$       \\\hline
+			\textbf{Αντίσταση μηδενικού} & $R_Z=46.496318\kohm$                 \\\hline
+			\textbf{Ρεύμα εκροής του M5} & $I_5 = 8.674358\unit{\micro\ampere}$ \\\hline
+		\end{tabular}
+		\caption{Εκτίμηση των παραμέτρων του κυκλώματος \ref{circ:op_amp_schematic}. Το αναμενόμενο κέρδος τάσης ανοιχτού βρόχου είναι $A_v=196.96$ και η κατανάλωση ισχύος αναμένεται $P_{\mathrm{diss}}=0.056\unit{\milli\watt}$.}
+		\label{table:estimate}
+	\end{center}
+\end{table}

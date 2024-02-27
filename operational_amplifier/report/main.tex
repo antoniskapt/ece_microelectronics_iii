@@ -1,0 +1,36 @@
+\newcommand{\reporttitle}{CMOS Τελεστικός Ενισχυτής Δύο Σταδίων}
+\newcommand{\authorOne}{Καπετάνιος Αντώνιος}
+\newcommand{\aemOne}{10417}
+
+\input{preamble.tex}
+
+\begin{document}
+	\pagenumbering{arabic}
+	\input{title.tex}
+	\input{abstract.tex}
+	\vspace*{0.25cm}
+	\setlength{\columnsep}{24pt}
+	\setlength{\columnseprule}{0.25pt}
+	\begin{multicols*}{2}
+		\begin{center}
+			\begin{circuitfig}[H]
+				\centering
+				\includegraphics[width=6cm]{circuits/op_amp_schematic.pdf}
+				\caption{Τελεστικός ενισχυτής δύο σταδίων. Στην έξοδο του ενισχυτή συνδέεται χωρητικό φορτίο $C_L$. Όλα τα transistor λειτουργούν στην περιοχή κορεσμού.}
+				\label{circ:op_amp_schematic}
+			\end{circuitfig}
+		\end{center}
+		\input{specs.tex}
+		\input{model.tex}
+		\input{estimate.tex}
+		\input{sim.tex}
+		\input{conclusion.tex}
+	% \end{multicols*}
+	% \begin{multicols*}{2}
+		\addcontentsline{toc}{section}{Αναφορές}
+		\printbibliography[title={Αναφορές}]
+		\input{appendix_model.tex}
+		\input{appendix_script.tex}
+	\end{multicols*}
+
+\end{document}
