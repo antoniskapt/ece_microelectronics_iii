@@ -1,0 +1,42 @@
+\begin{center}
+	\begin{circuitfig}[H]
+		\includegraphics[width=14cm]{circuits/micro3_lab1.pdf}
+		\caption{Γεννήτρια τριγωνικής παλμοσειράς.}
+		\label{circ:1_schematic}
+	\end{circuitfig}
+\end{center}
+\vspace*{-1cm}
+
+Στην πρώτη άσκηση μελετάται το κύκλωμα \ref{circ:1_schematic} το οποίο αποτελείται από δύο τελεστικούς ενισχυτές μΑ741. Για την τροφοδοσία των τελεστικών ενισχυτών είναι $V_{CC}=15\unit{\volt}$ και $V_{EE}=15\unit{\volt}$. Οι δύο δίοδοι Zener (1N750) έχουν τάση Zener $V_Z=7.5\unit{\volt}$ και τάση στην ορθή πόλωση $V_D=0.7\unit{\volt}$.\par
+Για τους ωμικούς αντιστάτες είναι $R_2=4.7\kohm$ και $R=40\kohm$. Για τις υπόλοιπες αντιστάσεις, $R_1,R_f$, και τον πυκνωτή $C$, βάσει των οδηγιών, προκύπτει $R_1=50\kohm$, $R_f=35\kohm$ και $C=4\unit{\nano\farad}$. Ωστόσο, επιλέχθηκαν οι πλησιέστερες τιμές που εμφανίζονται στα τυποποιημένα εξαρτήματα. Τελικά, το κύκλωμα υλοποιήθηκε με $R_1=47\kohm$, $R_f=33\kohm$ και $C=4.7\unit{\nano\farad}$.\par
+
+\section{Θεωρητική μελέτη \& προσομοίωση}
+
+	\subsection{Περιγραφή της λειτουργίας του κυκλώματος}
+		\input{ask_01_sections/q1.tex}
+
+	\subsection{Θεωρητικός σχεδιασμός κυματομορφών}
+		\input{ask_01_sections/q2.tex}
+
+	% Q4
+	\subsection{Προσομοίωση με PSpice}
+		\input{ask_01_sections/q4.tex}
+
+	\subsection{Μέγιστη συχνότητα λειτουργίας I}
+		\input{ask_01_sections/q5.tex}
+
+	\subsection{Μέγιστη συχνότητα λειτουργίας II}
+		\input{ask_01_sections/q6.tex}
+
+	\subsection{Ρύθμιση πλάτους εξόδου}
+		\input{ask_01_sections/q7.tex}
+
+	% \subsection{Ρύθμιση του πλάτους τους σήματος}
+
+\newpage
+\section{Εργαστηριακή εφαρμογή}
+	\input{ask_01_sections/lab.tex}
+
+\newpage
+\section{Παρατηρήσεις \& συμπεράσματα}
+	\input{ask_01_sections/conclusion.tex}

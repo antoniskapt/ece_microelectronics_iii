@@ -1,0 +1,59 @@
+\pgfplotsset{grid style={dotted,lightgray}}
+\begin{tikzpicture}
+	\begin{axis}[
+			scale only axis,
+			height=4cm,
+			width=5cm,
+			grid=both,
+			minor tick num=1,
+			xtick={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14},
+			ytick={-1.8,0,5,10,13},
+			xlabel={Time $\(\unit{\milli\second}\)$},
+			ylabel={Voltage $\(\unit{\volt}\)$}]
+
+		\addplot+[thick,mark=none,const plot,color=DodgerBlue3]
+		coordinates	{(1.5+0,-1.8) (1.5+0,13) (1.5+0.450,13) (1.5+0.450,-1.8) (1.5+4.500,-1.8)
+				(1.5+4.500,13) (1.5+4.950,13) (1.5+4.950,-1.8) (1.5+9.000,-1.8)};
+		\legend{$v_1$}
+	\end{axis}
+\end{tikzpicture}\hspace*{1cm}
+\begin{tikzpicture}
+	\begin{axis}[
+			scale only axis,
+			height=4cm,
+			width=5cm,
+			grid=both,
+			minor tick num=1,
+			ymin=-2.4,
+			ymax=3,
+			samples=200,
+			ytick={-2.32,-2,-1,0,1,2,2.88},
+			xlabel={Time $\(\unit{\milli\second}\)$},
+			ylabel={Voltage $\(\unit{\volt}\)$}]
+
+		\addplot[thick,color=DeepPink3,domain=-0.2:0.2] {1.225+3.1*(1-exp(-x*3.81))};
+		\addplot[thick,color=DeepPink3,domain=0.2:4.14] {-4.76+8.11*exp(-x*0.29)};
+		\addplot[thick,color=DeepPink3,domain=-0.2+4.34:4.34+0.2] {1.225+3.1*(1-exp(-(x-4.34)*3.81))};
+		\addplot[thick,color=DeepPink3,domain=0.2+4.34:4.14+4.34] {-4.76+8.11*exp(-(x-4.34)*0.29)};
+		\legend{$v_{C_1}$}
+	\end{axis}
+\end{tikzpicture}\vspace*{0.5cm}
+\begin{tikzpicture}
+	\begin{axis}[
+			scale only axis,
+			height=4cm,
+			width=8cm,
+			grid=both,
+			minor tick num=3,
+			ymin=-5,
+			ymax=25,
+			ytick={-4,0,10,20,24},
+			xlabel={Time $\(\unit{\milli\second}\)$},
+			ylabel={Voltage $\(\unit{\volt}\)$}]
+
+		\addplot+[thick,mark=none,const plot,color=SeaGreen4]
+		coordinates	{(0,-4) (0,24) (3,24) (3,-4) (23.4,-4)
+				(0+23.4,-4) (0+23.4,24) (3+23.4,24) (3+23.4,-4) (23.4*2,-4)};
+		\legend{$v_2$}
+	\end{axis}
+\end{tikzpicture}

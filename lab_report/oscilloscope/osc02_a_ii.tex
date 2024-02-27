@@ -1,0 +1,20 @@
+\pgfplotsset{grid style={dotted,lightgray}}
+\begin{tikzpicture}
+	\begin{axis}[
+			scale only axis,
+			height=4cm,
+			width=8cm,
+			grid=both,
+			minor tick num=3,
+			ymin=-14,
+			ymax=15.5,
+			ytick={-12.8,-10,0,10,14.4},
+			xlabel={Time $\(\unit{\milli\second}\)$},
+			ylabel={Voltage $\(\unit{\volt}\)$}]
+
+		\addplot+[thick,mark=none,const plot,color=SeaGreen4]
+		coordinates	{(0,-12.8) (0,14.4) (3,14.4) (3,-12.8) (23.4,-12.8)
+				(0+23.4,-12.8) (0+23.4,14.4) (3+23.4,14.4) (3+23.4,-12.8) (23.4*2,-12.8)};
+		\legend{$v_2$}
+	\end{axis}
+\end{tikzpicture}

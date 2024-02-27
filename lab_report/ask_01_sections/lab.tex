@@ -1,0 +1,34 @@
+\subsection{Λήψη κυματομορφών $v_1$, $v_2$ και $v_{\mathrm{out}}$}
+Οι κυματομορφές $v_{\mathrm{out}}, v_1$ και $v_2$ του κυκλώματος \ref{circ:1_schematic} σε διάστημα  διάρκειας $1.184\unit{\milli\second}$ για $R_1=47\kohm$, $R_2=4.7\kohm$, $R_v=39.4\kohm\Rightarrow R=40.4\kohm$, $R_f=33\kohm$ και $C=4.7\unit{\nano\farad}$ δίδονται στο διάγραμμα \ref{plot:1_lab_voltages}.
+
+\begin{plot_fig}[H]
+	\begin{center}
+		\input{oscilloscope/osc01.tex}
+		\caption{Οι τάσεις $v_1, v_2$ και $v_{\mathrm{out}}$ όπως μετρήθηκαν χρήσει του παλμογράφου στο εργαστήριο. Η περίοδος της κυματομορφής στην έξοδος της γεννήτριας είναι $T_{\mathrm{out}}=592\unit{\milli\second}$.}
+		\label{plot:1_lab_voltages}
+	\end{center}
+\end{plot_fig}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|r||c|c|c|}
+			\specialrule{1.25pt}{0pt}{0pt}
+			\textbf{Σήμα}   & $v_1$                   & $v_2$                   & $v_{\mathrm{out}}$      \\\hline
+			\textbf{Πλάτος} & $13.8\unit{\volt}_\mathrm{pp}$ & $13.2\unit{\volt}_\mathrm{pp}$ & $17.0\unit{\volt}_\mathrm{pp}$ \\\specialrule{1.25pt}{0pt}{0pt}
+		\end{tabular}
+		\caption{Μετρήσεις των κυματομορφών του διαγράμματος \ref{plot:1_lab_voltages}.}
+		\label{table:ask1_lab}
+	\end{center}
+\end{table}
+
+Επιπλέον, μετρήθηκε με πολύμετρο το ρεύμα που διαρρέει τις διόδους και βρέθηκε $I_Z=0.12\unit{\ampere}_\mathrm{rms}$.\par
+
+\subsection{Μέγιστη συχνότητα λειτουργίας}
+	Για την εύρεση της μέγιστης συχνότητας σωστής λειτουργίας, παρατηρήθηκαν στον παλμογράφο οι $v_\mathrm{out}$ και $v_2$ καθότι η παραμόρφωση του τετραγωνικού παλμού είναι αρκετά πιο εμφανής σε σχέση με του τριγωνικού. Μεταβάλλοντας την τιμή του ποτενσιομέτρου, η μέγιστη συχνότητα σωστής λειτουργίας βρέθηκε $f_{\max}=5.556\unit{\kilo\hertz}$ για $R_v=6.9\kohm$ ή $R=6.9\kohm+1\kohm=7\kohm$.\par
+	Η κυματομορφή της εξόδου, σε συχνότητα $f_{\max}=5.556\unit{\kilo\hertz}$, είχε πλάτος $16.6\unit{\volt}_\mathrm{pp}$, ελάχιστη τιμή $\min{(v_\mathrm{out})}=-8.4\unit{\volt}$ και μέγιστη τιμή $\max{(v_\mathrm{out})}=8.2\unit{\volt}$.\par
+
+\subsection{Ρυθμός ανόδου $v_2$ στη μέγιστη συχνότητα λειτουργίας}
+	Για τον προσδιορισμό του ρυθμού ανόδου προσδιορίσθηκε η τιμή της $v_2$ στο $10\%$ του πλάτους της και στο $90\%$ του πλάτους της σε θετική ακμή. Επιπλέον, μετρήθηκε η χρονική απόσταση των δύο σημείων αυτών και βρέθηκε $\Delta t=2.5\unit{div}\cdot10\unit{\micro\second\per div}=25\unit{\micro\second}$. Οι τάσεις είναι $v_{0.1}=-6.74\unit{\volt}$ και $v_{0.9}=6.54\unit{\volt}$. Συνεπώς, ο ρυθμός ανόδου είναι
+	\begin{equation*}
+		\mathrm{SR}_{v_2}=\frac{v_{0.9}-v_{0.1}}{\Delta t}=7.0016\unit{\volt\per{\micro\second}}.
+	\end{equation*}

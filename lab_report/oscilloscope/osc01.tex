@@ -1,0 +1,21 @@
+\pgfplotsset{grid style={dotted,lightgray}}
+\begin{tikzpicture}
+	\begin{axis}[
+			grid=both,
+			minor tick num=1,
+			ymin=-15,
+			ymax=15,
+			xtick={0,200,400,600,800,1000,1200},
+			xticklabels={$0$,$200$,$400$,$600$,$800$,$1000$,$1200$},
+			ytick={-10,-5,0,5,10},
+			xlabel={Time $\(\unit{\micro\second}\)$},
+			ylabel={Voltage $\(\unit{\volt}\)$}]
+		\addplot+[thick,mark=none,color=DodgerBlue3]
+		coordinates	{(-0.004*592,0) (+0.01*592,9) ((0.5-0.01)*592,9) ((0.5+0.01)*592,-8) ((1-0.01)*592,-8) ((1+0.01)*592,9) ((1.5-0.01)*592,9) ((1.5+0.01)*592,-8) ((2-0.01)*592,-8) ((2+0.004)*592,0)};
+		\addplot+[thick,mark=none,domain=0:2*592,color=DeepPink3]
+		coordinates {(0,6.8) (0.5*592,-7) (592,6.8) (1.5*592,-7) (2*592,6.8)};
+		\addplot+[dashed,thick,mark=none,domain=0:2*592,color=black]
+		coordinates {(-0.01*592,0.7) (0.01*592,6.8) ((0.5-0.01)*592,-0.7) ((0.5+0.01)*592,-7) ((1-0.01)*592,+0.7) ((1+0.01)*592,6.8) ((1.5-0.01)*592,-0.7) ((1.5+0.01)*592,-7) ((2-0.01)*592,+0.7)};
+		\legend{$v_2$,$v_{\mathrm{out}}$,$v_1$}
+	\end{axis}
+\end{tikzpicture}

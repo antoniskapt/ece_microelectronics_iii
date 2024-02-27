@@ -1,0 +1,9 @@
+1)	V_out, parametric sweep r=[1,101]kΩ, step=20kΩ
+	r=1e3Ω
+2)	V_out, V2, parametric sweep r=[1,20]kΩ step=4kΩ
+	V2 distorted @r=5kΩ (red waveform)
+3)	V_out, V2, parametric sweep r=[5,8]kΩ step=0.75kΩ
+	V2 distorted @r=5.75kΩ (red waveform)
+4)	V_out, V2, r=6.5kΩ
+	Period_V_out=223.285 μsec
+	Period_V2=223.185 μsec

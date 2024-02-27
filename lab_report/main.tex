@@ -1,0 +1,28 @@
+\newcommand{\reporttitle}{Εργαστηριακές Ασκήσεις}
+\newcommand{\reportauthorOne}{Καπετάνιος Αντώνιος}
+\newcommand{\cidOne}{10417}
+\newcommand{\reportauthorTwo}{Χαλκιάς Νικόλαος-Μάριος}
+\newcommand{\cidTwo}{10472}
+
+\input{preamble.tex}
+
+\begin{document}
+
+	\pagenumbering{alph}
+	\input{titlepage}
+
+	\pagenumbering{roman}
+	\tableofcontents
+	\newpage
+
+	\pagenumbering{arabic}
+	\chapter{Γεννήτρια τριγωνικών παλμών}
+		\input{ask01.tex}
+
+	\chapter{Γεννήτρια κλιμακωτής τάσης}
+		\input{ask02.tex}
+
+	\printbibliography[title={Αναφορές}]
+	\addcontentsline{toc}{chapter}{Αναφορές}
+
+\end{document}
